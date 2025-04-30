@@ -1,4 +1,3 @@
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -230,7 +229,6 @@ class scNET(torch.nn.Module):
 
     out_features =  out_features.T[highly_variable_index.values].T
     col_loss = self.feature_critarion(x[highly_variable_index.values].T, out_features)
-
 
     return self.lambda_rows * row_loss + self.lambda_cols * (col_loss + reg), row_loss, col_loss
   
